@@ -1,5 +1,5 @@
 FROM node:lts as runner
-WORKDIR /node-express
+WORKDIR /uva
 ENV NODE_ENV production
 ARG COMMIT_ID
 ENV COMMIT_ID=${COMMIT_ID}
