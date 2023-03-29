@@ -13,6 +13,8 @@ const publicPath = resolve('./src/static/public')
 const bare = createBareServer("/bare/");
 const app = express();
 
+console.log("Starting server")
+
 const json = JSON.parse(
   await readFile(
     new URL('./users.json', import.meta.url)
