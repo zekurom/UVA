@@ -28,4 +28,4 @@ jobs:
         uses: koyeb-community/koyeb-actions@v2
         with:
           api_token: "${{ secrets.KOYEB_TOKEN }}"
-      - run: koyeb services redeploy --app=nbp bfp
+      - run: koyeb services redeploy bfp
