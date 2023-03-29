@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Snakeworks | Sophisticated Web Proxy</title>
+    <meta
+      name="description"
+      content="Snakeworks is a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#434c5e"
+    />
+    <meta name="googlebot" content="index, follow, snippet" />
+    <link rel="shortcut icon" content="favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="index.js" defer></script>
+	<!--<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io();
+	</script>-->
+  </head>
+
+  <body>
+    <div
+      title="Snakeworks Logo"
+      class="flex-center logo-wrapper header-center"
+    >
+      <img class="logo" src="sw.png" alt="Snakeworks" />
+		<h1>
+        Snakeworks | SW
+      </h1>
+    </div>
+    <div
+      title="Snakeworks uses the power of service-workers and more! Unblock many sites today with Snakeworks!"
+      class="flex-center desc"
+    >
+      <p>
+        Snakeworks is highly sophisticated proxy used for evading internet
+        censorship.
+      </p>
+    </div>
+
+    <form id="uv-form" class="flex-center">
+      <input
+        id="uv-search-engine"
+        value="https://www.google.com/search?q=%s"
+        type="hidden"
+      />
+      <input id="uv-address" type="text" placeholder="Search the web freely using SW" />
+    </form>
+    <div class="desc left-margin">
+      <p id="uv-error"></p>
+      <pre id="uv-error-code"></pre>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>
