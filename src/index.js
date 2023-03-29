@@ -10,6 +10,8 @@ import { hostname } from "node:os";
 import basicAuth from 'express-basic-auth'
 const publicPath = resolve('./src/static/public')
 
+console.log("current working dir:", __dirname)
+
 const bare = createBareServer("/bare/");
 const app = express();
 
