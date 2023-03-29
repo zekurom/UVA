@@ -127,4 +127,5 @@ function shutdown() {
 
 server.listen({
   port,
+  process.env[IP],
 });
