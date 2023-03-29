@@ -91,6 +91,7 @@ let ip = process.env.IP || "127.0.0.1"
 if (isNaN(port)) port = 8080;
 
 console.log(port, " is the specified port")
+console.log(ip, " is the specified listening address")
 
 server.on("listening", () => {
   const address = server.address();
@@ -127,6 +128,7 @@ function shutdown() {
 //});
 
 server.listen({
-  port,
-  ip,
+  host: ip.toString(),
+  port: port,
+  exclusive: true,
 });
