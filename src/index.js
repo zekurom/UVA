@@ -14,7 +14,7 @@ const bare = createBareServer("/bare/");
 const app = express();
 
 console.log("Starting server")
-/*
+
 const json = JSON.parse(
   await readFile(
     new URL('./users.json', import.meta.url)
@@ -54,7 +54,7 @@ function getUnauthorizedResponse(req) {
         ? ('Credentials ' + req.auth.user + ':' + req.auth.password + ' rejected')
         : 'No credentials provided'
 }
-*/
+
 
 // Load our publicPath first and prioritize it over UV.
 app.use(express.static(publicPath));
