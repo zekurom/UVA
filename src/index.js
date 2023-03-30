@@ -1,7 +1,7 @@
 import createBareServer from "@tomphttp/bare-server-node";
 import express from "express";
 const router = express.Router()
-import { createServer } from "node:http";
+import { createServer, get } from "node:http";
 //import { publicPath } from "ultraviolet-static";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { join, resolve } from "node:path";
@@ -14,6 +14,15 @@ const bare = createBareServer("/bare/");
 const app = express();
 
 console.log("Starting server")
+
+console.log("Retrieving public IP...")
+var http = require('http');
+
+get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
+  resp.on('data', function(ip) {
+    console.log("My public IP address is: " + ip);
+  });
+});
 
 const json = JSON.parse(
   await readFile(
