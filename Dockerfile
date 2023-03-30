@@ -5,5 +5,5 @@ ARG COMMIT_ID
 ENV COMMIT_ID=${COMMIT_ID}
 COPY . .
 RUN npm ci --only=production
-EXPOSE 3000
+EXPOSE 8080
 CMD ["node", "./src/index.js"]
