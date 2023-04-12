@@ -23,7 +23,7 @@ get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
   });
 });
 
-console.log(networkInterfaces());
+console.log(networkInterfaces);
 
 const json = JSON.parse(
   await readFile(
