@@ -7,8 +7,9 @@ import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { join, resolve } from "node:path";
 import { readFile } from 'fs/promises';
 import { hostname } from "node:os";
-import basicAuth from 'express-basic-auth'
-const publicPath = resolve('./src/static/public')
+import basicAuth from 'express-basic-auth';
+import networkInterfaces from 'os';
+const publicPath = resolve('./src/static/public');
 
 const bare = createBareServer("/bare/");
 const app = express();
@@ -21,6 +22,8 @@ get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
     console.log("My public IP address is: " + ip);
   });
 });
+
+console.log(networkInterfaces());
 
 const json = JSON.parse(
   await readFile(
